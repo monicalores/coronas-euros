@@ -1,4 +1,4 @@
-const CACHE = 'dkk-eur-v1';
+const CACHE = 'dkk-eur-v2';
 const ASSETS = [
   './',
   './index.html',
