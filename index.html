@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Kroner → Euro</title>
+  <meta name="description" content="Conversor de coronas danesas (DKK) a euros (EUR).">
+  <meta name="theme-color" content="#F4F2EE">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Kr → €">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="title">
+        <p class="eyebrow">Conversor</p>
+        <h1>Kroner → Euro</h1>
+      </div>
+      <div class="rate">
+        <span class="rate-label">Tipo de cambio</span>
+        <span class="rate-main">1 € = <span id="rate-value">7,4963</span> kr</span>
+        <span class="rate-sub">1 kr = <span id="rate-inverse">0,1334</span> €</span>
+      </div>
+    </header>
+
+    <div class="cards">
+      <section class="card card-from" aria-label="Importe a convertir">
+        <div class="card-top">
+          <span class="card-name" id="from-name">Coronas danesas</span>
+          <span class="pill pill-accent" id="from-code">DKK</span>
+        </div>
+        <div class="card-amount">
+          <span class="amount" id="input">100</span>
+          <span class="symbol" id="from-symbol">kr</span>
+        </div>
+      </section>
+
+      <div class="swap-row">
+        <button class="swap" id="swap" type="button" aria-label="Invertir dirección de conversión">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16"/><path d="M3 8l4-4 4 4"/><path d="M17 20V4"/><path d="M21 16l-4 4-4-4"/></svg>
+        </button>
+      </div>
+
+      <section class="card card-to" aria-label="Resultado">
+        <div class="card-top">
+          <span class="card-name" id="to-name">Euros</span>
+          <span class="pill pill-dark" id="to-code">EUR</span>
+        </div>
+        <div class="card-amount">
+          <span class="amount" id="result" aria-live="polite">13,40</span>
+          <span class="symbol" id="to-symbol">€</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="chips" id="chips"></div>
+
+    <div class="keypad" id="keypad">
+      <button type="button" class="key" data-key="1">1</button>
+      <button type="button" class="key" data-key="2">2</button>
+      <button type="button" class="key" data-key="3">3</button>
+      <button type="button" class="key" data-key="4">4</button>
+      <button type="button" class="key" data-key="5">5</button>
+      <button type="button" class="key" data-key="6">6</button>
+      <button type="button" class="key" data-key="7">7</button>
+      <button type="button" class="key" data-key="8">8</button>
+      <button type="button" class="key" data-key="9">9</button>
+      <button type="button" class="key key-alt" data-key="," aria-label="Coma decimal">,</button>
+      <button type="button" class="key" data-key="0">0</button>
+      <button type="button" class="key key-alt" data-key="back" aria-label="Borrar">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M18 9l-6 6"/><path d="M12 9l6 6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
